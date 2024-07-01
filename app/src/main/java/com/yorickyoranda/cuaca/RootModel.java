@@ -8,6 +8,7 @@ public class RootModel {
     @SerializedName("list")
     private List<ListModel> listModelList;
 
+
     public  RootModel() {}
 
     public List<ListModel> getListModelList() {

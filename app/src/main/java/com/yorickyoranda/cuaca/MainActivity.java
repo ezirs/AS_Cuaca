@@ -6,17 +6,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 
+import java.util.Objects;
+
 import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView _recyclerView1;
     private SwipeRefreshLayout _swipeRefreshLayout1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
                 RecyclerView.LayoutManager lm = new LinearLayoutManager(MainActivity.this);
                 CuacaAdapter ca = new CuacaAdapter(rm);
 
-                _recyclerView1.setLayoutManager(lm);
                 _recyclerView1.setAdapter(ca);
+                _recyclerView1.setLayoutManager(lm);
             }
 
             @Override
